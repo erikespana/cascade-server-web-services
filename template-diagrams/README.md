@@ -4,7 +4,7 @@ A web services app that generates exploratory tree diagrams of Cascade Server Te
 
 **index.html**
 
-Static PHP form displaying folder and instance dropdowns.
+PHP form displaying a dropdown of folder IDs, containing Templates.
 
 **template.php**
 
