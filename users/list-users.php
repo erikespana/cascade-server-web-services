@@ -1,5 +1,5 @@
 <?php
-// A script that lists all Cascade users
+// Trying to list all our Cascade users
 
 /* This script is based on the following documentation:
 
