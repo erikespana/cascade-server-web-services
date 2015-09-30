@@ -1,20 +1,23 @@
 <?php
+// A script that lists all Cascade users
+
 require_once( '../auth_espanae_dev.php' );
 
 
-/* List all Cascade users using the following documentation:
+/* This script is based on the following documentation:
 
     - Lesson 7: User, Group, Role, and Access Rights
       http://www.upstate.edu/cascade-admin/projects/web-services/courses/introductory-course/introductory-lesson-7.php
   
-  
+    - Cascade class
+      http://www.upstate.edu/cascade-admin/projects/web-services/oop/classes/cascade.php
 */
 
 try {
-
-    $users = $cascade->getUsersByName( "*" );
+    // Get all Cascade users ()
+    $users = $cascade->getUsersByName( "*es" );
     // 
-    echo "<pre>\$users = \$cascade->getUsersByName( '*' );</pre>\n";
+    echo "<pre>\$users = \$cascade->getUsersByName( '*es' );</pre>\n";
     echo "<pre>count(\$users): " . count($users) . "</pre>\n";
     
     foreach( $user as $users )
