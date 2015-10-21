@@ -1,34 +1,11 @@
 <?php
-require_once('auth_espanae.php');
+require_once('/Applications/MAMP/htdocs/cascade/auth_espanae.php');
+//require_once('/Applications/MAMP/htdocs/cascade/auth_ns_espanae_cascade.php');
 
-// Set Placement Folder for news asset factories
-$folderID = '68250e75956aa078003f6ca45ac13246';
-echo "<p>$folderID</p>";
-
-echo "<h1>Reporting Orphans In Cascade</h1>\n";
-
-
-function assetTreeReportOrphans( 
-    AssetOperationHandlerService $service, 
-    Child $child, $params=NULL, $results=NULL )
-{
-    if( is_array( $results ) ) {
-    
-        $subscribers = $child->getAsset( $service )->getSubscribers();
-        
-        if( $subscribers == NULL ) {
-        
-            $results[ F::REPORT_ORPHANS ][ $child->getType() ][] = 
-                $child->getPathPath();
-        }
-    }
-}
-
-echo "<p>funcion assetTreeReportOrphans</p>";
+// Use /news/images/homepage/ folder for testing
+$folderID = '3a06b928956aa05200c85bbb843d7299';
 
 $results = array();
-
-echo "<p>\$results = array();</p>";
 
 Asset::getAsset( 
     $service, Folder::TYPE, $folderID )->
@@ -38,13 +15,12 @@ Asset::getAsset(
         NULL, 
         &$results );
         
-echo "<p>\Asset::getAsset</p>";
 
 if( count( $results[ F::REPORT_ORPHANS ] ) > 0 )
 {
-    echo S_UL;
+    //echo S_UL;
+    print_r( $results );
 } else {
     echo "<p>else</p>\n";
 }
-echo "<p>if-else</p>\n";
 ?>
