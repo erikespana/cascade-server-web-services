@@ -1,6 +1,14 @@
 <?php
-require_once('/Applications/MAMP/htdocs/cascade/auth_espanae.php');
-//require_once('/Applications/MAMP/htdocs/cascade/auth_ns_espanae_cascade.php');
+// Original library
+//require_once('/Applications/MAMP/htdocs/cascade/auth_espanae.php'); // prod instance
+
+// Namespace version of library
+//require_once('/Applications/MAMP/htdocs/cascade/auth_ns_espanae_cascade.php'); // prod instance
+require_once('/Applications/MAMP/htdocs/cascade/auth_ns_espanae_oceania.php'); // test instance
+
+
+// Use reboot:/_scripts folder for testing
+//$folderID = '68250e75956aa078003f6ca45ac13246';
 
 // Use /news/images/homepage/ folder for testing
 $folderID = '3a06b928956aa05200c85bbb843d7299';
@@ -13,7 +21,7 @@ Asset::getAsset(
     traverse( 
         array( File::TYPE => array( F::REPORT_ORPHANS ) ), 
         NULL, 
-        &$results );
+        $results );
         
 
 if( count( $results[ F::REPORT_ORPHANS ] ) > 0 )
