@@ -1,4 +1,4 @@
-# Custom Bulk Change Tool
+# Custom Bulk Change Tools
 
 Each of these web services scripts assigns a new content type and updates metadata and data definition fields for a group of pages.
 
