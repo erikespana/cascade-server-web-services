@@ -1,2 +1,2 @@
 # Template Diagrams
-This code has it's own repository now: https://github.com/espanae/dataviz
+This code is in its own repository: https://github.com/espanae/dataviz
