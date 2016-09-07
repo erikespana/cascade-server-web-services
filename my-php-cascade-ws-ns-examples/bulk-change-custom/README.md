@@ -21,5 +21,5 @@ Makes the aformentioned updates to pages in a folder.
 Clones a content type and its related configuraton set and assigns the copied content type to the copied configuration set.
 
 ### Tested with
-- Cascade Server 7.8, 7.12.4
+- Cascade Server 7.12.4
 - PHP 5.6.8
