@@ -22,4 +22,4 @@ Clones a content type and its related configuraton set and assigns the copied co
 
 ### Tested with
 - Cascade Server 7.8, 7.12.4
-- PHP 5.3.3
+- PHP 5.6.8
