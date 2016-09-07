@@ -16,7 +16,7 @@ Makes the aformentioned updates to a list of pages.
 
 Makes the aformentioned updates to pages in a folder.
 
-**01_copyContentType.php**
+**clone-contentType.php**
 
 Clones a content type and its related configuraton set, then connects the copied content type and configuration set.
 
