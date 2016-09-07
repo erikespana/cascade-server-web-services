@@ -18,7 +18,7 @@ Makes the aformentioned updates to pages in a folder.
 
 **01_copyContentType.php**
 
-Clones a content type and its related configuraton set and assigns the copied content type to the copied configuration set.
+Clones a content type and its related configuraton set, then connects the copied content type and configuration set.
 
 ### Tested with
 - Cascade Server 7.12.4
