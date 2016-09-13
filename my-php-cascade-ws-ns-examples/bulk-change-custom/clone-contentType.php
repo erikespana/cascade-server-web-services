@@ -2,23 +2,23 @@
 /* Creates a copy of the current content type
     and assigns it to a copy of the current configuration set.
 */
-
-// Content Types/Human Resources/Job Posting - Faculty
-$contentTypeId = "0734f49e956aa0520099d297d878c8a5";
-// reboot:/Configuration Sets/Bootstrap/Office subpage - Becker Events
-$oldConfigSetId = "8144ed8a956aa0787c5eb17eb5e2e7e9";
-$fileExtension = " - Bootstrap";
 ini_set('display_errors', "On");
 error_reporting( E_ALL );
 
-require_once('auth_ns_espanae_cascade.php');
+// Content Types/Offices/Contact Information
+$contentTypeId = "fa18384c956aa07801f685724c863479";
+// Configuration Sets/offices/Contact Information
+$oldConfigSetId = "0d188e17956aa0780099ee0bb9e58b30";
+$fileExtension = " - Clone";
 
+require_once('auth_ns_espanae_cascade.php');
 use cascade_ws_constants as c;
 use cascade_ws_asset as a;
 use cascade_ws_property as p;
 use cascade_ws_utility as u;
 use cascade_ws_exception as e;
 
+echo "<h1>Clone Content Type</h1>";
 try
 {
     // Get the current content type
@@ -27,26 +27,26 @@ try
     // Copy the current content type (passing the parent container and content type's name)
     $newCt = $oldCt->
         copy($oldCt->getParentContainer(), $oldCt->getName().$fileExtension);
-    //$newCt->display();
-    
+    echo "<p>Copied content type ID ". $contentTypeId ."</p>"; 
 
     // Step 3: Get a similar configuration set
     $oldCSet = $cascade->getAsset( a\PageConfigurationSet::TYPE, $oldConfigSetId );
     
     // Step 4: Copy the configuration set
-    $newCSet = $oldCSet->
-        copy($oldCSet->getParentContainer(), $newCt->getName() );
-
+    $newCSet = $oldCSet->copy($oldCSet->getParentContainer(), $newCt->getName() );
+    echo "<p>Copied configuration set ID ". $oldConfigSetId ."</p>"; 
 
     // Step 5: Assign the new configuration set to the new content type
     // sets pageConfigurationSetId and pageConfigurationSetPath, and returns the object.
     $newCt->setPageConfigurationSet( $newCSet )->edit();
-    $newCt->display();
+    echo "<p>Linked the new content type to the new configuration set.</p>";
+    echo "<p>New content type ID: " . $newCt->getId() . "</p>";
+
+    // Display information about the new content type
+    //$newCt->display();
+    
+    // Data definition stuff (old)
     //echo "\$old Data Definition ID: " . $oldDDId;
-    //echo "<p>" . $newCt->getId(). "</p>\n";
-
-
-
     
     //$ct->setDataDefinition( $newDataDefinitionId )->edit();
     /*
