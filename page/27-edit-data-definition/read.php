@@ -10,9 +10,16 @@ $identifier = array(
 	'path' => array('path' => $path, 'siteName' => $site ),
 	'type' => 'page'
 );
-	$readParams = array ('authentication' => $auth, 'identifier' => $identifier);
-	$reply = $client->read($readParams);
+$readParams = array ('authentication' => $auth, 'identifier' => $identifier);
+$reply = $client->read($readParams);
 	
-	print_r( $reply );
+if ($reply->readReturn->success=='true') {
+
+	// get page object
+	$page = $reply->readReturn->asset->page;
+} else
+	echo "Error occurred: " . $reply->readReturn->message;
+	
+print_r( $page );
 ?>
 </pre>
